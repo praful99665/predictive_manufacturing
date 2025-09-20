@@ -1,0 +1,6 @@
+frappe==15.*
+erpnext==15.*
+pandas
+numpy
+scikit-learn
+joblib
