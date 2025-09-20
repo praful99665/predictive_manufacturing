@@ -58,7 +58,7 @@ Pre-commit is configured to use the following tools for checking and formatting 
 # Predictive Manufacturing - Delay Alert System
 
 ## Overview
-This app helps manufacturers predict delays in **Work Orders** by using AI/ML models.  
+This app helps manufacturers predict delays in Work Orders by using AI/ML models.  
 It integrates seamlessly into ERPNext and provides early warnings based on real-world factors like material availability, machine downtime, and workforce shortage.
 
 ---
