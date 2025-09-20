@@ -64,6 +64,7 @@ It integrates seamlessly into ERPNext and provides early warnings based on real-
 ---
 
 ## Architecture Flow
+```mermaid
 flowchart TD
     A[New Work Order Created] --> B[Extract Features]
     B --> C[Check Raw Material Availability]
@@ -73,8 +74,11 @@ flowchart TD
     F --> G[Predict Delay Probability]
 
     G -->|0-30%| H[Low Risk (Green)]
-    G -->|≥30%| J[High Risk (Red)]
+    G -->|>=30%| J[High Risk (Red)]
     J --> K[Flag as High Risk in ERPNext UI]
+vbnet
+Copy code
+
 
 #################################################################################
 #################################################################################
