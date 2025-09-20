@@ -64,7 +64,6 @@ It integrates seamlessly into ERPNext and provides early warnings based on real-
 ---
 
 ## Architecture Flow
-```mermaid
 flowchart TD
     A[New Work Order Created] --> B[Extract Features]
     B --> C[Check Raw Material Availability]
