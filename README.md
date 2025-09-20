@@ -6,11 +6,34 @@ Predictive Manufacturing
 
 You can install this app using the [bench](https://github.com/frappe/bench) CLI:
 
+## Installation
+
+1. **Go to your Frappe Bench directory**
 ```bash
-cd $PATH_TO_YOUR_BENCH
-bench get-app $URL_OF_THIS_REPO --branch develop
-bench install-app predictive_manufacturing
-```
+cd ~/frappe-bench
+bench get-app https://github.com/praful99665/predictive_manufacturing.git
+bench --site your-site-name install-app predictive_manufacturing
+bench migrate
+
+## Train the predictive model
+bench --site your-site-name execute predictive_manufacturing.train_delay_model.train
+### This command creates the model files in:
+sites/your-site-name/public/files/models/
+
+
+        delay_model.pkl → trained machine learning model
+        
+        workstation_ohe.pkl → encoder for categorical features
+        
+        feature_columns.pkl → list of feature columns used in the model
+
+### Usage
+
+Once installed and trained, Work Orders will show risk indicators based on the predictive model.
+
+You can call the model from server scripts or API endpoints in ERPNext to get delay probabilities.
+
+
 
 ### Contributing
 
@@ -100,25 +123,10 @@ Each Work Order uses the following features to predict delay:
 - **Saved Artifacts:**
 
 
-
-
-
-
 sites/[site-name]/public/files/models/
 ├── delay_model.pkl # Trained ML model
 ├── workstation_ohe.pkl # One-Hot Encoder for workstation
 └── feature_columns.pkl # Feature column order
-
-
-
-
-
-
-
-
-
-
-
 
 ---
 
