@@ -73,11 +73,9 @@ flowchart TD
     E --> F[Pass Data to ML Model]
     F --> G[Predict Delay Probability]
 
-    G -->|0-30%| H[Low Risk (Green)]
-    G -->|>=30%| J[High Risk (Red)]
+    G -->|"0-30% probability"| H[Low Risk (Green)]
+    G -->|"30% or more"| J[High Risk (Red)]
     J --> K[Flag as High Risk in ERPNext UI]
-vbnet
-Copy code
 
 
 #################################################################################
